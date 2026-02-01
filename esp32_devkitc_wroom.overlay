@@ -1,0 +1,33 @@
+/ {
+    aliases {
+        led0 = &led0;
+    };
+    leds {
+        compatible = "gpio-leds";
+        led0: led_0 {
+            gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
+            label = "Onboard LED";
+        };
+    };
+};
+
+&i2c0 {
+    status = "okay";
+    clock-frequency = <I2C_BITRATE_FAST>;
+    sda-gpios = <&gpio0 21 GPIO_ACTIVE_HIGH>;
+    scl-gpios = <&gpio0 22 GPIO_ACTIVE_HIGH>;
+
+    mcp4725: mcp4725@60 {
+        compatible = "microchip,mcp4725";
+        reg = <0x60>;
+        status = "okay";
+        #io-channel-cells = <1>;
+    };
+    ina219: ina219@40 {
+        compatible = "ti,ina219";
+        reg = <0x40>;
+        shunt-milliohm = <100>;
+        lsb-microamp = <10>;
+        status = "okay";
+    };
+};
