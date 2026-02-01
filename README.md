@@ -1,37 +1,52 @@
-Microcontroller-based I–V Curve Tracer using INA219 and MCP4725 DAC
+# CurveTracer
 
-Overview:
+![License](https://img.shields.io/github/license/izharahmad805/CurveTracer)
+![Stars](https://img.shields.io/github/stars/izharahmad805/CurveTracer)
+![Release](https://img.shields.io/github/v/release/izharahmad805/CurveTracer)
 
-Measures I–V characteristics of electronic components or solar panels
+**Microcontroller-based I–V Curve Tracer using INA219 and MCP4725 DAC**  
 
-Voltage sweep via MCP4725 DAC, current measurement via INA219 sensor
+## Overview
+CurveTracer is a project to measure **current–voltage (I–V) characteristics** of electronic components or solar panels. It uses:
 
-Firmware optimized for real-time measurement and low power
+- **INA219** for high-precision current measurement  
+- **MCP4725 DAC** for voltage sweep  
+- STM32 / ESP32 microcontroller for firmware control and data logging  
 
-Hardware:
+The system enables **real-time measurement**, data analysis, and hardware–firmware integration.
 
-STM32 / ESP32 microcontroller
+---
 
-INA219 current sensor
+## Features
+- Voltage sweep using MCP4725 DAC  
+- Current measurement using INA219 sensor  
+- Real-time data logging and I–V curve generation  
+- Optimized firmware for **low power and efficiency**  
+- Compatible with bare-metal and RTOS platforms  
 
-MCP4725 DAC
+---
 
-MOSFET-based load switching
+## Hardware
+- STM32 / ESP32 microcontroller  
+- INA219 current sensor  
+- MCP4725 DAC  
 
-Compact PCB design
 
-Firmware:
+---
 
-Bare-metal / RTOS-compatible
+## Firmware
+- Firmware handles DAC sweeping, INA219 measurement, and logging  
+- Written in **C/C++**, optimized for **performance and low power**  
+- **Zephyr RTOS** deployment  
 
-Handles voltage sweep, measurement, and data logging
+---
 
-Written in C/C++, optimized for performance and power
+## Usage
+1. Connect the device under test (solar panel or component)  
+2. Upload firmware to microcontroller  
+3. Use logging interface to record I–V curves  
+4. Analyze results for Voc, Isc, and maximum power point  
 
-Usage:
+---
 
-Connect device under test
-
-Upload firmware to microcontroller
-
-Record I–V curves via logging interface
+## Project Structure
